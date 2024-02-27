@@ -1,6 +1,6 @@
 <template>
   <FilterMenu v-if="this.userAuthenticated && this.loggedUser.role !== 'Admin'" @filterClicked="filterClicked"></FilterMenu>
-  <GoogleMap api-key="AIzaSyBUPW3FVdvim2r6KkMIvIYCouiBb1dPkvI" class="map" :center="center" :zoom="5">
+  <GoogleMap api-key="" class="map" :center="center" :zoom="5">
     <template v-for="university in this.universities">
       <CustomMarker v-if="this.checkUniversity(university)" :options="{ position: {lat: university.latitude, lng: university.longitude}, anchorPoint: 'BOTTOM_CENTER' }">
         <RouterLink class="nav-link" :to="{path: '/universitydetail/'+university._id}">
